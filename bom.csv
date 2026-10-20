@@ -1,0 +1,15 @@
+Item,Supplier,Qty,Unit (USD),Total,Link
+PCB fabrication,JLCPCB,1,10.00,10.00,
+3D printing,JLC3DP,1,5.00,5.00,
+Guitar inputs (C41409495),LCSC,2,0.50,1.00,https://www.lcsc.com/product-detail/C41409495.html
+Potentiometers (C470717),LCSC,3,0.57,1.71,https://www.lcsc.com/product-detail/C470717.html
+Op-amp (C5213),LCSC,5,0.22,1.11,https://www.lcsc.com/product-detail/C5213.html
+Shipping,JLC,,,5.00,
+Raspberry Pi Pico 2 WH,Core Electronics,1,10.01,10.01,https://core-electronics.com.au/raspberry-pi-pico-2-wh-with-headers.html
+Polymer Li-ion battery 400mAh,Core Electronics,1,3.89,3.89,https://core-electronics.com.au/polymer-lithium-ion-battery-400mah-38456.html
+Makerverse USB-C LiPo charger,Core Electronics,1,4.80,4.80,https://core-electronics.com.au/makerverse-usb-c-lipo-charger.html
+Adafruit PCM5100 I2S DAC,Core Electronics,1,5.64,5.64,https://core-electronics.com.au/adafruit-pcm5100-i2s-dac-line-level-output-100db-snr.html
+2.54mm female header 1x20,Core Electronics,2,0.245,0.49,https://core-electronics.com.au/0-100-2-54-mm-female-header-1x20-pin-straight.html
+Shipping,Core Electronics,,,7.00,
+6.5mm mono plug to 6.5mm mono R/A plug audio cable (3m),Jaycar,1,8.58,8.58,https://www.jaycar.com.au/6-5mm-mono-plug-to-6-5mm-mono-r-a-plug-audio-cable-3m/p/WA7024
+Total,,,,64.23,
