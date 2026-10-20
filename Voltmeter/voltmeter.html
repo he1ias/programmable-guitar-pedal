@@ -1,0 +1,109 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voltmeter</title>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#eef2f4}
+canvas{display:block;width:100%;height:100%}
+</style>
+<canvas id="c"></canvas>
+<script>
+const VREF = 3.3;
+const ZERO_RAW = 32768;
+const SCALE = 1;
+const RANGE = 1.65 * SCALE;
+const WINDOW_MS = 3000;
+const GRID_MS = 500;
+const SAMPLE_MS = 10;
+const POLL_MS = 50;
+
+const BG = "#eef2f4", GRID = "#d3dce1", ZERO = "#12324a",
+      MUTED = "#5f7685", TRACE = "#0b63ce";
+
+const cv = document.getElementById("c"), ctx = cv.getContext("2d");
+let dpr = 1, pts = [], online = false, lastPoll = null;
+
+function resize() {
+  dpr = window.devicePixelRatio || 1;
+  cv.width = Math.round(innerWidth * dpr);
+  cv.height = Math.round(innerHeight * dpr);
+}
+addEventListener("resize", resize);
+resize();
+
+const toVolts = raw => (raw - ZERO_RAW) / 65535 * VREF * SCALE;
+
+async function poll() {
+  try {
+    const r = await fetch("/read", { signal: AbortSignal.timeout(2000) });
+    if (!r.ok) throw new Error("bad response");
+    const a = new Uint16Array(await r.arrayBuffer());
+    const now = performance.now();
+    if (a.length) {
+      const span = lastPoll === null ? a.length * SAMPLE_MS : now - lastPoll;
+      const dt = span / a.length;
+      for (let i = 0; i < a.length; i++) {
+        pts.push({ t: now - (a.length - 1 - i) * dt, v: toVolts(a[i]) });
+      }
+    }
+    lastPoll = now;
+    online = true;
+  } catch (e) {
+    online = false;
+    lastPoll = null;
+  }
+  setTimeout(poll, POLL_MS);
+}
+poll();
+
+function line(x1, y1, x2, y2) {
+  ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+}
+
+function draw() {
+  const now = performance.now(), W = cv.width, H = cv.height;
+  const mid = H / 2, amp = H / 2 * 0.92;
+  const Y = v => mid - Math.max(-1.05, Math.min(1.05, v / RANGE)) * amp;
+
+  while (pts.length && now - pts[0].t > WINDOW_MS + 1000) pts.shift();
+
+  ctx.fillStyle = BG;
+  ctx.fillRect(0, 0, W, H);
+
+  ctx.lineWidth = dpr;
+  ctx.strokeStyle = GRID;
+  ctx.fillStyle = MUTED;
+  ctx.font = (12 * dpr) + "px system-ui, sans-serif";
+  for (let k = -4; k <= 4; k++) {
+    const y = mid - k / 4 * amp;
+    if (k) line(0, y, W, y);
+    ctx.fillText((k / 4 * RANGE).toFixed(2) + " V", 8 * dpr, y - 4 * dpr);
+  }
+
+  for (let t = Math.floor(now / GRID_MS) * GRID_MS; now - t < WINDOW_MS; t -= GRID_MS) {
+    const x = W - (now - t) / WINDOW_MS * W;
+    line(x, 0, x, H);
+  }
+
+  ctx.strokeStyle = ZERO;
+  ctx.lineWidth = 1.5 * dpr;
+  line(0, mid, W, mid);
+
+  if (pts.length) {
+    ctx.beginPath();
+    pts.forEach((p, i) => {
+      const x = W - (now - p.t) / WINDOW_MS * W;
+      i ? ctx.lineTo(x, Y(p.v)) : ctx.moveTo(x, Y(p.v));
+    });
+    if (online) ctx.lineTo(W, Y(pts[pts.length - 1].v));
+    ctx.strokeStyle = online ? TRACE : MUTED;
+    ctx.lineWidth = 2.5 * dpr;
+    ctx.lineJoin = "round";
+    ctx.stroke();
+  }
+
+  requestAnimationFrame(draw);
+}
+requestAnimationFrame(draw);
+</script>
+
