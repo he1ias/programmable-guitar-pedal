@@ -10,7 +10,7 @@ This project allows you to test infinite different effects on your acoustic or e
 
 All the firmare & KiCad project files used to build this project!
 
-You can access the KiCad project files (here)[https://kicanvas.org/?repo=https://github.com/he1ias/programmable-guitar-pedal/blob/main/KiCad%20files/]
+You can access the KiCad project files [here](https://kicanvas.org/?repo=https://github.com/he1ias/programmable-guitar-pedal/blob/main/KiCad%20files/).
 
 ### How do I built it?
 
