@@ -6,6 +6,12 @@ A programmable acoustic guitar pedal that doubles as a wireless instrument recor
 
 This project allows you to test infinite different effects on your acoustic or electric without having to pay huge prices for expensive guitar pedals. Simply plug your guitar in as you would with any other guitar pedal, and access different effects and plugins via the built-in Raspberry Pi Pico's web interface.
 
+### What's in this repo?
+
+All the firmare & KiCad project files used to build this project!
+
+You can access the KiCad project files (here)[https://kicanvas.org/?repo=https://github.com/he1ias/programmable-guitar-pedal/blob/main/KiCad%20files/]
+
 ### How do I built it?
 
 You can find the bill of materials in `bom.md` and `bom.csv`, I've also attached it below. KiCad project & gerber output files can also be found in this repository, as well as `.step` and `.stl` files ready to print the 3D guitar pedal case model.
