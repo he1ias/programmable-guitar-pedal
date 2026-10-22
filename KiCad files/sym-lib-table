@@ -1,4 +1,0 @@
-(sym_lib_table
-	(version 7)
-	(lib (name "Imports") (type "KiCad") (uri "${MODULES}/CE_Modules.kicad_sym") (options "") (descr ""))
-)
