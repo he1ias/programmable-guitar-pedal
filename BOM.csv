@@ -1,0 +1,11 @@
+Item,Qty,Supplier,Cost/item,Total Cost,link
+Potentiometers (w. Knobs),2,LCSC,$0.57,$1.14,https://www.lcsc.com/product-detail/C470717.html
+Precision potentiometers,5,LCSC,$0.16,$0.80,https://www.lcsc.com/product-detail/C118945.html
+Op-amp,5,LCSC,$0.30,$1.50,https://www.lcsc.com/product-detail/C7377.html
+"1/4"" guitar jacks",2,LCSC,$0.50,$1.00,https://www.lcsc.com/product-detail/C41409495.html
+JLCPCB,1,JLC,$10.00,$10.00,https://jlcpcb.com/
+Raspberry Pi Pico 2WH,1,Core electronics,$10.01,$10.01,https://core-electronics.com.au/raspberry-pi-pico-2-wh-with-headers.html
+DAC,1,Core electronics,$5.64,$5.64,https://core-electronics.com.au/adafruit-pcm5100-i2s-dac-line-level-output-100db-snr.html
+20pin Female headers,2,Core electronics,$0.25,$0.50,https://core-electronics.com.au/0-100-2-54-mm-female-header-1x20-pin-straight.html
+6.5mm male to 3mm female audio cable,1,Jaycar,$2.88,$2.88,https://www.jaycar.com.au/6-5mm-stereo-plug-to-3-5mm-stereo-socket-adaptor/p/PA3590
+Estimated total shipping,1,,,$14.00,
