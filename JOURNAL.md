@@ -6,7 +6,7 @@
 > [!NOTE]
 > This devlog is mirrored from [Half Life](https://halflife.hackclub.com) – [open the project](https://halflife.hackclub.com/projects/cmvew0bcu0act01rcn6ro3t11). Editing it here will not change the platform's copy, and the next sync overwrites this file.
 
-> A programmable acoustic guitar pedal that doubles as a wireless instrument recording device.
+> A programmable acoustic guitar pedal that doubles as a wireless instrument recording device. Simply plug in your guitar, access the Pi's web interface and start playing around with an infinite number guitar effects!
 
 | Week | Tier | Hours logged | Entries |
 | --- | --- | --- | --- |
