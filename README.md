@@ -10,48 +10,39 @@ This project allows you to test infinite different effects on your acoustic or e
 
 All the firmare & KiCad project files used to build this project!
 
-You can access the KiCad project files [here](https://kicanvas.org/?repo=https://github.com/he1ias/programmable-guitar-pedal/blob/main/KiCad%20files/).
+You can access the KiCad project files [here](https://kicanvas.org/?repo=https://github.com/he1ias/programmable-guitar-pedal/blob/main/KiCad%20Files/).
 
-### How do I built it?
+### How was it built?
+
+I started by making a prototype amplifier using breadboards & transistors:
+
+![A breadboard prototype](https://raw.githubusercontent.com/he1ias/programmable-guitar-pedal/refs/heads/main/Prototype.jpeg)
+
+I then developed the schematic using KiCad:
+
+![schematic](https://raw.githubusercontent.com/he1ias/programmable-guitar-pedal/refs/heads/main/Schematic.jpeg)
+
+...and the PCB!
+
+![PCB](https://raw.githubusercontent.com/he1ias/programmable-guitar-pedal/refs/heads/main/PCB.jpeg)
+
+![3D](https://raw.githubusercontent.com/he1ias/programmable-guitar-pedal/refs/heads/main/3D.jpeg)
+
+### How do I build it?
 
 You can find the bill of materials in `bom.md` and `bom.csv`, I've also attached it below. KiCad project & gerber output files can also be found in this repository, as well as `.step` and `.stl` files ready to print the 3D guitar pedal case model.
 
-#### JLC (USD)
+| Item | Qty | Supplier | Cost/item | Total Cost | Link |
+|------|----:|----------|----------:|-----------:|------|
+| Potentiometers (w. Knobs) | 2 | LCSC | $0.57 | $1.14 | [Link](https://www.lcsc.com/product-detail/C470717.html) |
+| Precision potentiometers | 5 | LCSC | $0.16 | $0.80 | [Link](https://www.lcsc.com/product-detail/C118945.html) |
+| Op-amp | 5 | LCSC | $0.30 | $1.50 | [Link](https://www.lcsc.com/product-detail/C7377.html) |
+| 1/4" guitar jacks | 2 | LCSC | $0.50 | $1.00 | [Link](https://www.lcsc.com/product-detail/C41409495.html) |
+| JLCPCB | 1 | JLC | $10.00 | $10.00 | [Link](https://jlcpcb.com/) |
+| Raspberry Pi Pico 2WH | 1 | Core electronics | $10.01 | $10.01 | [Link](https://core-electronics.com.au/raspberry-pi-pico-2-wh-with-headers.html) |
+| DAC | 1 | Core electronics | $5.64 | $5.64 | [Link](https://core-electronics.com.au/adafruit-pcm5100-i2s-dac-line-level-output-100db-snr.html) |
+| 20pin Female headers | 2 | Core electronics | $0.25 | $0.50 | [Link](https://core-electronics.com.au/0-100-2-54-mm-female-header-1x20-pin-straight.html) |
+| 6.5mm male to 3mm female audio cable | 1 | Jaycar | $2.88 | $2.88 | [Link](https://www.jaycar.com.au/6-5mm-stereo-plug-to-3-5mm-stereo-socket-adaptor/p/PA3590) |
+| Estimated total shipping | 1 | | | $14.00 | |
 
-| Item | Supplier | Qty | Unit | Total | Link |
-|---|---|---:|---:|---:|---|
-| PCB fabrication | JLCPCB | 1 | \~\$10.00 | \~\$10.00 | n/a |
-| 3D printing | JLC3DP | 1 | \~\$5.00 | \~\$5.00 | n/a |
-| Guitar inputs (C41409495) | LCSC | 2 | \$0.50 | \$1.00 | [link](https://www.lcsc.com/product-detail/C41409495.html) |
-| Potentiometers (C470717) | LCSC | 3 | \$0.57 | \$1.71 | [link](https://www.lcsc.com/product-detail/C470717.html) |
-| Op-amp (C5213) | LCSC | 5 | \$0.22 | \$1.11 | [link](https://www.lcsc.com/product-detail/C5213.html) |
-| Shipping | JLC | n/a | n/a | \~\$5.00 | n/a |
-| **Subtotal** | | | | **\~\$23.82 USD** | |
-
-#### Core Electronics (AUD)
-
-| Item | Qty | Unit | Total | Link |
-|---|---:|---:|---:|---|
-| Raspberry Pi Pico 2 WH | 1 | \$14.30 | \$14.30 | [link](https://core-electronics.com.au/raspberry-pi-pico-2-wh-with-headers.html) |
-| Polymer Li-ion battery 400mAh | 1 | \$5.55 | \$5.55 | [link](https://core-electronics.com.au/polymer-lithium-ion-battery-400mah-38456.html) |
-| Makerverse USB-C LiPo charger | 1 | \$6.85 | \$6.85 | [link](https://core-electronics.com.au/makerverse-usb-c-lipo-charger.html) |
-| Adafruit PCM5100 I2S DAC | 1 | \$8.05 | \$8.05 | [link](https://core-electronics.com.au/adafruit-pcm5100-i2s-dac-line-level-output-100db-snr.html) |
-| 2.54mm female header 1x20 | 2 | \$0.35 | \$0.70 | [link](https://core-electronics.com.au/0-100-2-54-mm-female-header-1x20-pin-straight.html) |
-| Shipping | n/a | n/a | \~\$10.00 | n/a |
-| **Subtotal** | | | **\~\$45.45 AUD** | |
-
-#### Jaycar (AUD)
-
-| Item | Qty | Unit | Total | Link |
-|---|---:|---:|---:|---|
-| 6.5mm mono plug to 6.5mm mono R/A plug audio cable (3m) | 1 | \$12.25 | \$12.25 | [link](https://www.jaycar.com.au/6-5mm-mono-plug-to-6-5mm-mono-r-a-plug-audio-cable-3m/p/WA7024) |
-| **Subtotal** | | | **\$12.25 AUD** | |
-
-#### Summary
-
-| Source | Currency | Subtotal |
-|---|---|---:|
-| JLC (incl. shipping) | USD | \~\$23.82 |
-| Core Electronics (incl. shipping) | AUD | \~\$45.45 |
-| Jaycar | AUD | \$12.25 |
-| **Total** | | **\~\$64 USD** |
+Total cost: ~$46.47 (USD).
